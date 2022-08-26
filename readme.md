@@ -99,7 +99,7 @@ Consiste en una llamada HTTP POST con los siguientes datos:
     * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000)
     * Id Propiedad: es un numero que identifica a cada propiedad visitadas. (numero entre 1 y 100000)
     * Fecha y hora de comienzo de visita
-    * Fecha y hora de termino de visita
+    * Fecha y hora de termino de visita. 
     * Longitud: numero decimal entre -90 y 90
     * Latitud: numero decimal entre -180 y 180
 
@@ -114,7 +114,7 @@ curl -X 'POST' \
   -d '{
   "id_houmer": 10,
   "id_property": 2300,
-  "start_date": "2022-08-25T21:28:23.087Z",
+  "start_date": "2022-08-25T20:28:23.087Z",
   "end_date": "2022-08-25T21:28:23.087Z",
   "latitude": -78,
   "longitude": -22
