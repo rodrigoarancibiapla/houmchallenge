@@ -32,7 +32,7 @@ Luego podemos iniciar la aplicación
 python manage.py runserver
 ```
 
-Abrir en un browser la url http://127.0.0.1:8000/docs/ donde está le interfaz OpenAPI.
+Abrir en un browser la url http://127.0.0.1:8000/docs/ donde está la interfaz OpenAPI.
 
 Para ejecución con settings de testing. Esto es, logs en archivo en carpeta logs
 
@@ -43,9 +43,8 @@ python manage.py  runserver --settings=houmchallenge.settings_options.settings_t
 Nota: El archivos de settings por defecto usa el archivo ubicado en settings_options/settings_dev
 
 ### Pylint
-Ejecución de analizador de código. 
 
-En la carpeta raiz de la aplicación:
+Ejecución de analizador de código. En la carpeta raiz de la aplicación:
 
 ```
 pylint geohoum
@@ -75,18 +74,16 @@ coverage report
 
 ## Supuestos
 
-1. Cada houmer posee un id unico
-2. Cada propiedad posee un id unico
+1. Cada nuevo registro de posición que se envia desde el cliente posee un identificador de houmer y un identificador de propiedad.
+2. Cada houmer posee un id unico
+3. Cada propiedad posee un id unico
 
 
 ## Arquitecura
 
 1. Se uso el framework Django y el paquete DRF. 
 2. El esquema de la API se encuentra en el directorio static y el rendering se configuró para obtener el archivo de un recurso estático. Esto para agregar mas detalles que la configuración dinámica no pudo llenar.
-3. Para el calculo de la distancia del trayecto se uso la bibioteca geopy.
-
-
-
+3. Para el calculo de la distancia del trayecto se uso la biblioteca geopy.
 
 
 ## Ejecución de la API
