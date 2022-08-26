@@ -95,12 +95,18 @@ Consiste en una api de 3 llamadas mas una de documentacion:
 ### 1. Envio de coordenadas
 
 Consiste en una llamada HTTP POST con los siguientes datos:
-    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000)
-    * Id Propiedad: es un numero que identifica a cada propiedad visitadas. (numero entre 1 y 100000)
-    * Fecha y hora de comienzo de visita
+
+    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000).
+    
+    * Id Propiedad: es un numero que identifica a cada propiedad visitadas. (numero entre 1 y 100000).
+    
+    * Fecha y hora de comienzo de visita.
+    
     * Fecha y hora de termino de visita. 
-    * Longitud: numero decimal entre -90 y 90
-    * Latitud: numero decimal entre -180 y 180
+    
+    * Longitud: numero decimal entre -90 y 90.
+    
+    * Latitud: numero decimal entre -180 y 180.
 
 Ejemplo de llamada:
 
@@ -123,8 +129,10 @@ curl -X 'POST' \
 ### 2. Obtención de coordenadas visitadas y tiempo en cada una (en minutos)
 
 Consiste en una llamada HTTP GET con los siguientes datos:
-    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000)
-    * Fecha de comienzo de visita (año/mes/dia)
+
+    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000).
+    
+    * Fecha de comienzo de visita (año/mes/dia).
 
 
 Ejemplo de llamada:
@@ -151,9 +159,12 @@ Ejemplo de salida:
 ### 3. Obtención de recorridos entre visitas con exceso de velocidad
 
 Consiste en una llamada HTTP GET con los siguientes datos:
-    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000)
-    * Fecha de comienzo de visita (año/mes/dia)
-    * Velocidad maxima permitida (km/h)
+
+    * Id Houmer: un identificados unico para cada houmer. (numero entre 1 y 10000).
+    
+    * Fecha de comienzo de visita (año/mes/dia).
+    
+    * Velocidad maxima permitida (km/h).
 
 Ejemplo de llamada:
 
