@@ -16,7 +16,17 @@ pip install -r requirements.txt
 
 En el directorio raiz de la aplicación
 
-Para ejecución con settings de desarrollo. Esto es, logs en  consola y en archivo en carpeta logs
+Para ejecución con settings de desarrollo. Esto es, logs en  consola y en archivo en carpeta logs. La carpeta logs está configurada para correr en el directorio raiz de la aplicación. Por lo tanto debemos crear ese directorio. En el caso de windows y linux el comando es
+
+```
+mkdir log
+```
+Luego debemos crear la estructura de la base de datos. Esto creará una base db.sqlite3
+
+```
+python.exe  manage.py migrate --run-syncdb
+```
+Luego podemos iniciar la aplicación
 
 ```
 python manage.py runserver
