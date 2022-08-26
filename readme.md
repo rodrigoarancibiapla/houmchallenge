@@ -16,9 +16,9 @@ pip install -r requirements.txt
 
 ### Ejecución de programa
 
-En el directorio raiz de la aplicación
 
-Para ejecución con settings de desarrollo. Esto es, logs en  consola y en archivo en carpeta logs. La carpeta logs está configurada para correr en el directorio raiz de la aplicación. Por lo tanto debemos crear ese directorio. En el caso de windows y linux el comando es
+
+Para ejecución con settings de desarrollo. Esto es, logs en  consola y en archivo en carpeta logs. La carpeta logs está configurada para correr en el directorio raiz de la aplicación. Por lo tanto debemos crear ese directorio en el directorio raiz de la aplicación. En el caso de windows y linux el comando es
 
 ```
 mkdir logs
