@@ -32,6 +32,8 @@ Luego podemos iniciar la aplicación
 python manage.py runserver
 ```
 
+Abrir en un browser la url http://127.0.0.1:8000/docs/ donde está le interfaz OpenAPI.
+
 Para ejecución con settings de testing. Esto es, logs en archivo en carpeta logs
 
 ```
