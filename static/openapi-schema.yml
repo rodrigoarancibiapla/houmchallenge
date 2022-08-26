@@ -1,0 +1,201 @@
+openapi: 3.0.2
+info:
+  title: 'Houm API'
+  version: '1.0.0'
+paths:
+  /geohoum/visits/{idhoumer}/{year}/{month}/{day}:
+    get:
+      operationId: retrievePropertyVisited
+      description: Retrieve list of properties visited for a houmer and a date.
+      parameters:
+      - name: idhoumer
+        in: path
+        required: true
+        description: 'Houmer Id'
+        schema:
+          type: integer
+      - name: year
+        in: path
+        required: true
+        description: 'Year'
+        schema:
+          type: integer
+      - name: month
+        in: path
+        required: true
+        description: 'Month'
+        schema:
+          type: integer
+      - name: day
+        in: path
+        required: true
+        description: 'Day'
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropertyVisited'
+          description: ''
+      tags:
+      - geohoum
+  /geohoum/speed/{speed}/{idhoumer}/{year}/{month}/{day}:
+    get:
+      operationId: retrieveTrip
+      description: Retrieve a list of trips where the speed limit was exceeded
+      parameters:
+      - name: speed
+        in: path
+        required: true
+        description: 'Max Speed (Km/h)'
+        schema:
+          type: integer
+      - name: idhoumer
+        in: path
+        required: true
+        description: 'Houmer Id'
+        schema:
+          type: integer
+      - name: year
+        in: path
+        required: true
+        description: 'Year'
+        schema:
+          type: integer
+      - name: month
+        in: path
+        required: true
+        description: 'Month'
+        schema:
+          type: integer
+      - name: day
+        in: path
+        required: true
+        description: 'Day'
+        schema:
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trip'
+          description: ''
+      tags:
+      - geohoum
+  /geohoum/:
+    post:
+      operationId: createPosition
+      description: Create a position in the system.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Position'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Position'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Position'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Position'
+          description: ''
+      tags:
+      - geohoum
+components:
+  schemas:
+    PropertyVisited:
+      type: object
+      properties:
+        id_houmer:
+          type: integer
+          maximum: 10000
+          minimum: 1
+          description: Houmer Id
+        id_property:
+          type: integer
+          maximum: 1000000
+          minimum: 1
+          description: Property Id
+      required:
+      - id_houmer
+      - id_property
+    Trip:
+      type: object
+      properties:        
+        id_houmer:
+          type: integer
+          description: Houmer Id
+        id_property_start:
+          type: integer
+          description: Property Id trip start
+        id_property_end:
+          type: integer
+          description: Property Id trip end
+        start_travel_date:
+          type: string
+          format: date-time
+          description: Date time trip start
+        end_travel_date:
+          type: string
+          format: date-time
+          description: Date time trip end
+        speed:
+          type: integer
+          description: Speed in km/h
+      required:
+      - id_houmer
+      - id_property_start
+      - id_property_end
+      - start_travel_date
+      - end_travel_date
+      - speed
+    Position:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        id_houmer:
+          type: integer
+          maximum: 10000
+          minimum: 1
+          description: Houmer Id
+        id_property:
+          type: integer
+          maximum: 1000000
+          minimum: 1
+          description: Property Id
+        start_date:
+          type: string
+          format: date-time
+          description: Visit start date and time
+        end_date:
+          type: string
+          format: date-time
+          description: End date and time of visit
+        latitude:
+          type: number
+          maximum: 90
+          minimum: -90
+          description: Latitude in grades
+        longitude:
+          type: number
+          maximum: 180
+          minimum: -180
+          description: Longitude in grades
+      required:
+      - id_houmer
+      - id_property
+      - start_date
+      - end_date
+      - latitude
+      - longitude
