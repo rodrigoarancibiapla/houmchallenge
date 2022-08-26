@@ -5,6 +5,7 @@
 ### Requerimientos
 
 Python 3.10
+Pip 2.22
 
 ### Instalación de packetes
 
