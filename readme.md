@@ -1,4 +1,4 @@
-# Challenge Houms
+# Challenge Houm
 
 ## Instalación
 
